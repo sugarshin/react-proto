@@ -1,0 +1,16 @@
+{
+  "name": "react-starter",
+  "version": "0.0.0",
+  "description": "private react skeleton",
+  "repository": "git@github.com:sugarshin/react-starter.git",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build"
+  },
+  "author": "sugarshin",
+  "license": "MIT",
+  "projectConf": {
+    "SRC": "src",
+    "PUBLIC": "public"
+  },
+}
