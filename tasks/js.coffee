@@ -28,12 +28,12 @@ errorHandler = (args...) ->
   @emit 'end'
 
 ###
- * @param {Boolean} isUglify
- * @param {Boolean} isWatch
+ * @param {Bool} minify
+ * @param {Bool} watch
  * @return {Object} gulp stream
 ###
-compile = (isUglify, isWatch) ->
-  if isWatch
+compile = (minify, watch) ->
+  if watch
     option = config.browserify
     option.cache = {}
     option.packageCache = {}
@@ -41,7 +41,7 @@ compile = (isUglify, isWatch) ->
     bundler = watchify browserify config.src, option
   else
     bundler = browserify config.src, config.browserify
- 
+
   bundle = ->
     bundler
       .bundle()
@@ -49,15 +49,15 @@ compile = (isUglify, isWatch) ->
       .pipe source config.bundle
       .pipe duration "compiled => #{config.bundle}"
       .pipe buffer()
-      .pipe gIf isUglify, uglify()
+      .pipe gIf minify, uglify()
       .pipe gulp.dest config.dest
- 
+
   bundler.on 'update', bundle
- 
+
   return bundle()
 
 gulp.task 'js', -> compile false
- 
+
 gulp.task 'build-js', -> compile true
- 
+
 gulp.task 'watch-js', -> compile false, true
