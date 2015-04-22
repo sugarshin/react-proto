@@ -1,10 +1,10 @@
-# react-starter
+# react-proto
 
-React starter
+Rapid prototyping on React
 
 ```shell
 mkdir project-name && cd $_
-git clone --depth 1 git@github.com:sugarshin/react-starter.git .
+git clone --depth 1 git@github.com:sugarshin/react-proto.git .
 sh init.sh
 ```
 

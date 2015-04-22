@@ -1,14 +1,10 @@
 {
-  "name": "react-starter",
-  "version": "0.0.1",
-  "description": "React starter",
-  "repository": "git@github.com:sugarshin/react-starter.git",
+  "name": "react-proto",
+  "version": "0.0.0",
+  "description": "Rapid prototyping on React",
+  "repository": "git@github.com:sugarshin/react-proto.git",
   "scripts": {
-    "start": "npm run watchify & npm run serve",
-    "serve": "live-server ./public/",
-    "watchify": "watchify src/js/main.cjsx -v -t coffee-reactify --extension='.cjsx' --extension='.coffee' -o public/js/main.js",
-    "build-js": "browserify src/js/main.cjsx -t coffee-reactify --extension='.cjsx' --extension='.coffee' | uglifyjs -m -c warnings=false --comments '/\\/*!/' > public/js/main.min.js",
-    "build": "npm run build-js"
+    "start": "budo main.cjsx:main.js -v --transform coffee-reactify | garnish"
   },
   "author": "sugarshin",
   "license": "MIT",

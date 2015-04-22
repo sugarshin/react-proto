@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 
-npm i -D browserify coffee-reactify live-server uglify-js watchify
+npm i -D budo coffee-reactify garnish watchify
 npm i -S react
-mkdir -p public/js && echo '<!doctype html>' > public/index.html
+echo "\"use strict\"\n\nReact = require 'react'" > main.cjsx
 rm -rf .git init.sh
