@@ -4,7 +4,7 @@
   "description": "Rapid prototyping on React",
   "repository": "git@github.com:sugarshin/react-proto.git",
   "scripts": {
-    "start": "budo main.cjsx:main.js -v --transform coffee-reactify | garnish"
+    "start": "budo main.jsx:main.js -v --live -- -t babelify --extension='.jsx' | garnish"
   },
   "author": "sugarshin",
   "license": "MIT",

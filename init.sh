@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 
-npm i -D budo coffee-reactify garnish watchify
-npm i -S react
-echo "\"use strict\"\n\nReact = require 'react'" > main.cjsx
+npm i -D babelify budo garnish watchify
+npm i -S flux react
+echo "import React from 'react';" > main.jsx
 rm -rf .git init.sh
